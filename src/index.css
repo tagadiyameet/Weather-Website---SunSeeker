@@ -1,0 +1,128 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 60% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 200 15% 73%;
+    --secondary-foreground: 215 25% 27%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 35 100% 65%;
+    --accent-foreground: 215 25% 27%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 210 100% 50%;
+
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 224 71% 4%;
+    --foreground: 210 20% 98%;
+
+    --card: 224 71% 4%;
+    --card-foreground: 210 20% 98%;
+
+    --popover: 224 71% 4%;
+    --popover-foreground: 210 20% 98%;
+
+    --primary: 210 100% 50%;
+    --primary-foreground: 210 20% 98%;
+
+    --secondary: 215 27% 16.9%;
+    --secondary-foreground: 210 20% 98%;
+
+    --muted: 215 27% 16.9%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 35 100% 65%;
+    --accent-foreground: 210 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 20% 98%;
+
+    --border: 215 27% 16.9%;
+    --input: 215 27% 16.9%;
+    --ring: 210 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    @apply w-full min-h-screen overflow-x-hidden;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .weather-card {
+    @apply bg-white/80 backdrop-blur-md border border-white/20 rounded-xl shadow-lg p-4 transition-all hover:shadow-xl;
+  }
+
+  .weather-icon-container {
+    @apply flex items-center justify-center w-14 h-14 rounded-full bg-white/30 backdrop-blur-sm shadow-md;
+  }
+
+  .search-input {
+    @apply w-full p-3 rounded-lg bg-white/80 backdrop-blur-sm border border-white/30 focus:outline-none focus:ring-2 focus:ring-primary shadow-md;
+  }
+
+  .animated-bg {
+    @apply absolute inset-0 -z-10 overflow-hidden;
+  }
+
+  .rain-drop {
+    @apply absolute w-0.5 h-3 rounded-full bg-blue-400/70 animate-rain-drop;
+  }
+
+  .sun-ray {
+    @apply absolute w-1 h-10 bg-yellow-300/50 rounded-full transform origin-top;
+  }
+
+  .cloud {
+    @apply absolute bg-white/80 rounded-full;
+  }
+
+  .stars {
+    @apply absolute w-1 h-1 bg-white rounded-full;
+  }
+
+  .fog-layer {
+    @apply absolute inset-0 bg-gray-400/20 backdrop-blur-sm;
+  }
+
+  .lightning {
+    @apply absolute bg-yellow-200;
+  }
+}
